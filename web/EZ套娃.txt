@@ -1,0 +1,1 @@
+本题因为服务器问题放置于bugku上， 做题网站需要另外注册，做完web41截图即可。 附链接：https://ctf.bugku.com/challenges/detail/id/183.html

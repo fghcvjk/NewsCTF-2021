@@ -1,0 +1,32 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br></span><span style="color: #007700">include&nbsp;(</span><span style="color: #DD0000">'flag.php'</span><span style="color: #007700">);
+<br></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);
+<br>function&nbsp;</span><span style="color: #0000BB">filter</span><span style="color: #007700">(</span><span style="color: #0000BB">$payload</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">,</span><span style="color: #DD0000">'flag'</span><span style="color: #007700">,</span><span style="color: #DD0000">'boyfriend'</span><span style="color: #007700">);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$filter&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/'</span><span style="color: #007700">.</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">'|'</span><span style="color: #007700">,</span><span style="color: #0000BB">$key</span><span style="color: #007700">).</span><span style="color: #DD0000">'/i'</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$filter</span><span style="color: #007700">,</span><span style="color: #DD0000">'hack!!!!'</span><span style="color: #007700">,</span><span style="color: #0000BB">$payload</span><span style="color: #007700">);
+<br>}
+<br>
+<br></span><span style="color: #0000BB">$payload</span><span style="color: #007700">=</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'payload'</span><span style="color: #007700">];
+<br></span><span style="color: #0000BB">$GDUT</span><span style="color: #007700">[</span><span style="color: #DD0000">'A&amp;D'</span><span style="color: #007700">]=</span><span style="color: #DD0000">'666'</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$GDUT</span><span style="color: #007700">[</span><span style="color: #DD0000">'Hed9eh0g'</span><span style="color: #007700">]=</span><span style="color: #DD0000">'no_girlfriend'</span><span style="color: #007700">;
+<br>
+<br>if(isset(</span><span style="color: #0000BB">$payload</span><span style="color: #007700">))&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$payload</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'php'</span><span style="color: #007700">)===</span><span style="color: #0000BB">false&nbsp;&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$payload</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'flag'</span><span style="color: #007700">)===</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$payload</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'boyfriend'</span><span style="color: #007700">)===</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'fuck_no_key!!!'</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}else{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$GDUT</span><span style="color: #007700">[</span><span style="color: #DD0000">'A&amp;D'</span><span style="color: #007700">]=</span><span style="color: #0000BB">$payload</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$GDUT</span><span style="color: #007700">=</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">filter</span><span style="color: #007700">(</span><span style="color: #0000BB">serialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$GDUT</span><span style="color: #007700">)));
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$GDUT</span><span style="color: #007700">[</span><span style="color: #DD0000">'Hed9eh0g'</span><span style="color: #007700">]&nbsp;===&nbsp;</span><span style="color: #DD0000">'has_girlfriend'</span><span style="color: #007700">)&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$flag</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'fuck_no_girlfriend!!!'</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}else{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">highlight_file</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">);
+<br>}</span>
+</span>
+</code></body></html>
